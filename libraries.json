@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "price": 43,
+    "count": 42,
+    "author": "sdveb",
+    "name": "acsca"
+  },
+  {
+    "id": 0,
+    "price": 2,
+    "count": 3,
+    "author": "bdbfdb",
+    "name": "acsca"
+  }
+]
