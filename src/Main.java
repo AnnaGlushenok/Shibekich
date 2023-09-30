@@ -1,31 +1,34 @@
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.net.Socket;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        String line, newLine;
+        String command;
+        //SWITCH_PROTOCOL TCP
+        //CREATE {"id":0,"price":4,"count":4,"author":"q56y","name":"acsca"}
+        //UPDATE {"id":0,"price":2,"count":3,"author":"bdbfdb","name":"acsca"}
+        //DELETE 0
+        //GET ALL
         try {
-            DataInputStream in = new DataInputStream(System.in);
-            // Communication Endpoint for client and server
-            Socket cs = new Socket("LocalHost", 6789);
+            Socket socket = new Socket("LocalHost", 6789);
             System.out.println("Client Started...");
-            // DataInputStream to read data from input stream
-            DataInputStream inp = new DataInputStream(cs.getInputStream());
-            // DataOutputStream to write data on outut stream
-            DataOutputStream out = new DataOutputStream(cs.getOutputStream());
+            Scanner scan = new Scanner(System.in);
+            DataInputStream inp = new DataInputStream(socket.getInputStream());
+            DataOutputStream out = new DataOutputStream(socket.getOutputStream());
             while (true) {
-                newLine = in.readLine();
-                if (newLine.equals("q")) {
+                command = scan.nextLine();
+                if (command.equals("q")) {
                     out.writeBytes("Client is down..." + '\n');
                     return;
                 } else {
-                    out.writeBytes(newLine + '\n');
+                    out.writeBytes(command + '\n');
                 }
-                line = inp.readLine();
-                System.out.println("Received from server: " + line);
+                System.out.println("Received from server: " + inp.readLine());
             }
         } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 }
