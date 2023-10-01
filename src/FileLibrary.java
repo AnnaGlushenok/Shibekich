@@ -7,11 +7,11 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-class TCPLibrary implements CRUD {
+class FileLibrary implements CRUD {
     private final String PATH = "././libraries.json";
     private List<Library> libraries;
 
-    {
+    public FileLibrary() {
         libraries = read();
         if (libraries == null)
             libraries = new ArrayList<>();
