@@ -48,7 +48,7 @@ class FileLibrary implements CRUD {
 
     @Override
     public synchronized void update(Library library) {
-        libraries.remove(library.getId());
+        libraries.removeIf(el -> el.getId() == library.getId());
         libraries.add(library);
         write();
     }
