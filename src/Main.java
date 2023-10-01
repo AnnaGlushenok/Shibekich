@@ -6,9 +6,9 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         String command;
-        //SWITCH_PROTOCOL TCP
-        //CREATE {"id":0,"price":4,"count":4,"author":"q56y","name":"acsca"}
-        //UPDATE {"id":0,"price":2,"count":3,"author":"bdbfdb","name":"acsca"}
+        //SWITCH_PROTOCOL FILE DATABASE
+        //CREATE {"price":4,"count":4,"author":"q56y","name":"tyht"}
+        //UPDATE {"id":6,"price":2,"count":3,"author":"bdbfdb","name":"acsca"}
         //DELETE 0
         //GET ALL
         try {
