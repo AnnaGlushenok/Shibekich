@@ -1,3 +1,3 @@
 public enum ProtocolType {
-    REST, TCP
+    FILE, DATABASE
 }
