@@ -6,8 +6,7 @@ public class Main {
     public static void main(String[] args) {
         try {
             Protocol protocol = new Protocol();
-            protocol.setProtocol(ProtocolType.TCP);
-            String[] command;
+            protocol.setProtocol(ProtocolType.FILE);
             ServerSocket serverSocket = new ServerSocket(6789);
             while (true) {
                 Socket socket = serverSocket.accept();
