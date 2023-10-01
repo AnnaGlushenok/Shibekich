@@ -13,10 +13,10 @@ public class Protocol {
      * @param protocol protocol type
      */
     public void setProtocol(ProtocolType protocol) {
-        if (protocol.equals(ProtocolType.TCP))
-            this.protocol = new TCPLibrary();
-        else if (protocol.equals(ProtocolType.REST))
-            this.protocol = new RESTLibrary();
+        if (protocol.equals(ProtocolType.FILE))
+            this.protocol = new FileLibrary();
+        else if (protocol.equals(ProtocolType.DATABASE))
+            this.protocol = new DatabaseLibrary();
     }
 
     public List<Library> get() {
