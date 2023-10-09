@@ -6,13 +6,13 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         String command;
-        //SWITCH_PROTOCOL FILE DATABASE
-        //CREATE {"price":4,"count":4,"author":"q56y","name":"tyht"}
+        //SWITCH_PROTOCOL DATABASE
+        //CREATE {"id":2,"price":4,"count":4,"author":"q56y","name":"tyht"}
         //UPDATE {"id":6,"price":2,"count":3,"author":"bdbfdb","name":"acsca"}
         //DELETE 0
         //GET ALL
         try {
-            Socket socket = new Socket("LocalHost", 6789);
+            Socket socket = new Socket("192.168.43.84", 6789);
             System.out.println("Client Started...");
             Scanner scan = new Scanner(System.in);
             DataInputStream inp = new DataInputStream(socket.getInputStream());
