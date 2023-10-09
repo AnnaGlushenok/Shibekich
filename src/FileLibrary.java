@@ -37,17 +37,20 @@ class FileLibrary implements CRUD {
 
     @Override
     public synchronized List<Library> get() {
+        libraries = read();
         return libraries;
     }
 
     @Override
     public synchronized void create(Library library) {
+        libraries = read();
         libraries.add(library);
         write();
     }
 
     @Override
     public synchronized void update(Library library) {
+        libraries = read();
         libraries.removeIf(el -> el.getId() == library.getId());
         libraries.add(library);
         write();
@@ -55,6 +58,7 @@ class FileLibrary implements CRUD {
 
     @Override
     public synchronized void delete(int id) {
+        libraries = read();
         libraries.removeIf(el -> el.getId() == id);
         write();
     }

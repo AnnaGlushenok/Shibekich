@@ -10,7 +10,7 @@ class DatabaseLibrary implements CRUD {
      */
     public DatabaseLibrary() {
         try {
-            this.con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Library", "root", "");
+            this.con = DriverManager.getConnection("jdbc:mysql://127.168.43.223:3306/library", "root", "");
         } catch (SQLException e) {
             e.printStackTrace();
         }
