@@ -10,9 +10,12 @@ class DatabaseLibrary implements CRUD {
      */
     public DatabaseLibrary() {
         try {
-            this.con = DriverManager.getConnection("jdbc:mysql://127.168.43.223:3306/library", "root", "");
+            Class.forName("org.sqlite.JDBC");
+            this.con = DriverManager.getConnection("jdbc:sqlite:Library");
         } catch (SQLException e) {
             e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
         }
     }
 
